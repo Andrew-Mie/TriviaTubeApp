@@ -3,10 +3,10 @@ package com.nikosis.triviatubeapp.data.repository
 import com.nikosis.triviatubeapp.common.Resource
 import com.nikosis.triviatubeapp.data.dto.toTriviaDrm
 import com.nikosis.triviatubeapp.data.model.TriviaDrm
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
-import java.util.concurrent.Flow
 import javax.inject.Inject
 
 class GetTriviaRepo @Inject constructor(
