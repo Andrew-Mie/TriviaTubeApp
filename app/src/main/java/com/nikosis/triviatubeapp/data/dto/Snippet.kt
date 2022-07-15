@@ -1,23 +1,21 @@
 package com.nikosis.triviatubeapp.data.dto
 
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 
-@JsonClass(generateAdapter = true)
 data class Snippet(
-    @Json(name = "channelId")
+    @SerializedName("channelId")
     val channelId: String,
-    @Json(name = "channelTitle")
+    @SerializedName("channelTitle")
     val channelTitle: String,
-    @Json(name = "description")
+    @SerializedName("description")
     val description: String,
-    @Json(name = "liveBroadcastContent")
+    @SerializedName("liveBroadcastContent")
     val liveBroadcastContent: String,
-    @Json(name = "publishedAt")
+    @SerializedName("publishedAt")
     val publishedAt: String,
-    @Json(name = "thumbnails")
+    @SerializedName("thumbnails")
     val thumbnails: Thumbnails,
-    @Json(name = "title")
+    @SerializedName("title")
     val title: String
 )

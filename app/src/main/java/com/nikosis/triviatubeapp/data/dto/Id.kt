@@ -1,13 +1,11 @@
 package com.nikosis.triviatubeapp.data.dto
 
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 
-@JsonClass(generateAdapter = true)
 data class Id(
-    @Json(name = "kind")
+    @SerializedName("kind")
     val kind: String,
-    @Json(name = "videoId")
+    @SerializedName("videoId")
     val videoId: String
 )

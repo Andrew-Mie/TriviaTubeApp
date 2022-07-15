@@ -1,15 +1,13 @@
 package com.nikosis.triviatubeapp.data.dto
 
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 
-@JsonClass(generateAdapter = true)
 data class Default(
-    @Json(name = "height")
+    @SerializedName("height")
     val height: Int,
-    @Json(name = "url")
+    @SerializedName("url")
     val url: String,
-    @Json(name = "width")
+    @SerializedName("width")
     val width: Int
 )

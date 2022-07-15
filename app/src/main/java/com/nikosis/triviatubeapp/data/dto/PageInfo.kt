@@ -1,13 +1,11 @@
 package com.nikosis.triviatubeapp.data.dto
 
 
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
+import com.google.gson.annotations.SerializedName
 
-@JsonClass(generateAdapter = true)
 data class PageInfo(
-    @Json(name = "resultsPerPage")
+    @SerializedName("resultsPerPage")
     val resultsPerPage: Int,
-    @Json(name = "totalResults")
+    @SerializedName("totalResults")
     val totalResults: Int
 )

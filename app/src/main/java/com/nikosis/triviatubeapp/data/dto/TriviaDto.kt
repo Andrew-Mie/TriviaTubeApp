@@ -1,23 +1,21 @@
 package com.nikosis.triviatubeapp.data.dto
 
 
+import com.google.gson.annotations.SerializedName
 import com.nikosis.triviatubeapp.data.model.TriviaDrm
-import com.squareup.moshi.Json
-import com.squareup.moshi.JsonClass
 
-@JsonClass(generateAdapter = true)
 data class TriviaDto(
-    @Json(name = "etag")
+    @SerializedName("etag")
     val etag: String,
-    @Json(name = "items")
+    @SerializedName("items")
     val items: List<Item>,
-    @Json(name = "kind")
+    @SerializedName("kind")
     val kind: String,
-    @Json(name = "nextPageToken")
+    @SerializedName("nextPageToken")
     val nextPageToken: String,
-    @Json(name = "pageInfo")
+    @SerializedName("pageInfo")
     val pageInfo: PageInfo,
-    @Json(name = "regionCode")
+    @SerializedName("regionCode")
     val regionCode: String
 )
 
