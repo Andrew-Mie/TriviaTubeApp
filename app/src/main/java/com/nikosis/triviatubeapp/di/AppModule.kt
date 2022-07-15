@@ -8,6 +8,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
@@ -19,8 +21,15 @@ object AppModule {
     @Provides
     @Singleton
     fun provideTriviaApi(): TriviaApi {
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
+            .client(
+                OkHttpClient.Builder()
+                    .addInterceptor(loggingInterceptor)
+                    .build()
+            )
             .addConverterFactory(MoshiConverterFactory.create())
             .build()
             .create(TriviaApi::class.java)
