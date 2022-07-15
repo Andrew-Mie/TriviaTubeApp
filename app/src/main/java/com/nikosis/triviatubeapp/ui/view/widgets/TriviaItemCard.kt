@@ -20,10 +20,11 @@ import com.nikosis.triviatubeapp.R
 @Preview
 @Composable
 fun TriviaItemCard(/*title: String, desc: String, picUrl: String*/
-//    triviaDRM: TriviaDRM
+//    val titleLocal= title
+//    val descLocal = desc
+//    val picUrlLocal = picUrl
 ) {
-    //val test: String = triviaDRM.channelDesc.toString()
-//    val test2: String = triviaDRM.drmSnippet.toString()
+
     Card(modifier = Modifier.fillMaxWidth()) {
         Row(
             modifier = Modifier
@@ -35,7 +36,7 @@ fun TriviaItemCard(/*title: String, desc: String, picUrl: String*/
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
 //                    .data(picUrl)
-//                    .data(/*triviaDRM.drmSnippet*/"test")
+//                    .data(/*triviaDrm.drmSnippet*/"test")
                     .crossfade(true)
                     .build(),
                 contentDescription = "Test",
