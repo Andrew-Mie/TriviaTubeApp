@@ -17,9 +17,9 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.nikosis.triviatubeapp.R
 
-@Preview
 @Composable
-fun TriviaItemCard(/*title: String, desc: String, picUrl: String*/
+fun TriviaItemCard(
+    title: String, desc: String, picUrl: String
 //    val titleLocal= title
 //    val descLocal = desc
 //    val picUrlLocal = picUrl
@@ -35,8 +35,7 @@ fun TriviaItemCard(/*title: String, desc: String, picUrl: String*/
         ) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-//                    .data(picUrl)
-//                    .data(/*triviaDrm.drmSnippet*/"test")
+                    .data(picUrl)
                     .crossfade(true)
                     .build(),
                 contentDescription = "Test",
@@ -51,8 +50,8 @@ fun TriviaItemCard(/*title: String, desc: String, picUrl: String*/
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.Start
             ) {
-                Text(text = "triviaDrm.channelSnippet")
-                Text(text = "triviaDrm.")
+                Text(text = title)
+                Text(text = desc)
 
             }
         }
@@ -61,11 +60,12 @@ fun TriviaItemCard(/*title: String, desc: String, picUrl: String*/
 }
 
 
-//
-//@Preview
-//@Composable
-//fun Preview_TriviaItemCard(triviaDRM: TriviaDRM) {
-//        TriviaTubeAppTheme {
-//        TriviaItemCard()
-//    }
-//}
+@Preview
+@Composable
+fun Preview_TriviaItemCard() {
+
+    TriviaItemCard(
+        title = "Test", desc = "Test", picUrl = ""
+    )
+
+}
