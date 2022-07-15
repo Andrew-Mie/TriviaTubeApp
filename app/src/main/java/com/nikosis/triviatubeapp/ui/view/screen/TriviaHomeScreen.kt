@@ -23,9 +23,8 @@ fun TriviaHomeScreen(viewModel: TriviaViewModel = hiltViewModel()) {
     val state = viewModel.state.value
     Box(modifier = Modifier.fillMaxSize()) {
         state.triviaLoaded?.let {
-            LazyColumn{
+            LazyColumn {
                 items(state.triviaLoaded.drmItems.subList(fromIndex = 0, toIndex = 10)) { x ->
-//                    Text(text = "${x.snippet.channelTitle}. ${x.snippet.description}")
                     TriviaItemCard(
                         title = x.snippet.title,
                         desc = x.snippet.description,
@@ -33,15 +32,8 @@ fun TriviaHomeScreen(viewModel: TriviaViewModel = hiltViewModel()) {
                     )
                 }
             }
-//Text(text = state.triviaLoaded.channelDesc.toString())
         }
-//        LazyColumn(modifier = Modifier.fillMaxSize()) {
-//            items() { x ->
-//                TriviaItemCard(triviaDrm = x
-//                )
-//
-//            }
-//        }
+
         if (state.loadingError.isNotBlank()) {
 
             Text(
@@ -54,6 +46,7 @@ fun TriviaHomeScreen(viewModel: TriviaViewModel = hiltViewModel()) {
                     .align(Alignment.Center)
             )
         }
+
         if (state.isLoading) {
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         }
