@@ -27,7 +27,10 @@ fun TriviaHomeScreen(viewModel: TriviaViewModel = hiltViewModel()) {
         Box(modifier = Modifier.fillMaxSize()) {
             state.triviaLoaded?.let {
                 LazyColumn {
-                    items(state.triviaLoaded.drmItems.subList(fromIndex = 0, toIndex = 10)) { x ->
+                    items(
+                        state.triviaLoaded.drmItems.sortedBy { it.snippet.description.length }
+                            .subList(fromIndex = 0, toIndex = 10)
+                    ) { x ->
                         TriviaItemCard(
                             title = x.snippet.title,
                             desc = x.snippet.description,
