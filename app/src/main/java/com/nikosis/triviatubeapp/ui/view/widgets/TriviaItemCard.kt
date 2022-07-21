@@ -63,6 +63,7 @@ fun TriviaItemCard(title: String, desc: String, picUrl: String) {
                     text = title,
                     style = MaterialTheme.typography.h6,
                     fontSize = 16.sp,
+                    maxLines = 1,
                     color = Color(0xFFDA5503),
                     overflow = TextOverflow.Ellipsis
                 )
